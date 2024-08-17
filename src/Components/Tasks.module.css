@@ -1,0 +1,15 @@
+.list_container{
+    display: grid;
+    place-items: center; 
+    padding: 30px;
+}
+
+.list_card{
+    width: 100%;
+    list-style: none;
+}
+
+.list_card li{
+   
+    color: #FFF;   
+}

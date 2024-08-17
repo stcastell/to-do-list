@@ -1,1 +1,10 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
 
+.main_container{
+    background-color: rgb(43, 43, 66);
+    height: 100vh;
+}

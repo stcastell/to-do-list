@@ -1,0 +1,28 @@
+.item{
+    padding: 15px;
+    background-color: rgb(63, 63, 88);
+    margin: 0px 0px 5px 0px;
+    display: flex;
+    position: relative;
+}
+
+.checkbox{
+    scale: 1.5;
+}
+
+.task_not_open{
+    margin-left: 10px;
+    text-decoration: line-through;
+    color: #9e9e9e;
+}
+
+.task_open{
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.delete{
+    position: absolute;
+    right: 0px;
+    margin-right: 10px;
+}
