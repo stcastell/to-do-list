@@ -1,6 +1,6 @@
 A basic To-Do list made with React.js.
 
-Test the app <a href='https://to-do-list-chi-rosy.vercel.app/'>here</a>, now!
+Test the app <a href='https://to-do-list-chi-rosy.vercel.app/' target='_blank'>here</a>, now!
 
 Features:
 <ul>
