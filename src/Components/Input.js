@@ -5,7 +5,8 @@ const Input = props => {
 
     const [task, setTask] = useState({
         task: '',
-        id: 0
+        id: 0,
+        isCompleted: false
     });
 
     const submitHandler = e => {
@@ -15,15 +16,17 @@ const Input = props => {
 
             setTask({
                 task: task.task,
-                id: task.id
+                id: task.id,
+                isCompleted: task.isCompleted
             })
 
-            localStorage.setItem(task.id.toString(), task.task);
+            localStorage.setItem(task.id.toString(), JSON.stringify(task)); //[task, id, isCompleted]
             props.sendTask(task);
 
             setTask({
                 task: '',
-                id: task.id
+                id: task.id,
+                isCompleted: false
             });
 
         }
@@ -33,7 +36,8 @@ const Input = props => {
     const changeHandler = e => {
         setTask({
             task: e.target.value,
-            id: Math.random()
+            id: Math.random(),
+            isCompleted: task.isCompleted
         });
     }
 

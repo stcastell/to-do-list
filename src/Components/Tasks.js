@@ -15,7 +15,7 @@ const Tasks = props => {
 
                 {props.enteredTask.map(item => (
                     <li key={item.id}>
-                        <ToDo task={item.task} id={item.id} onDelete = {deleterHandler}/>
+                        <ToDo task={item.task} isCompleted={item.isCompleted} id={item.id} onDelete = {deleterHandler}/>
                     </li>
                 ))}
 

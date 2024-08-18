@@ -10,9 +10,11 @@ function App() {
   let storage = []
   if (localStorage.length > 0) {
     for (let i = 0; i < localStorage.length; i++) {
+      let object = JSON.parse(localStorage.getItem(localStorage.key(i)))
       storage.push({
-        task: localStorage.getItem(localStorage.key(i)),
-        id: localStorage.key(i)
+        task: object['task'],
+        id: localStorage.key(i),
+        isCompleted: object['isCompleted']
       })
     }
   }
@@ -37,6 +39,7 @@ function App() {
     <div className={styles.main_container}>
       <Tasks enteredTask={task} onRemove={removeHandler} />
       <Input sendTask={getEnteredTask} />
+      {/* <Lab /> */}
     </div>
 
   );
