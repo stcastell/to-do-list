@@ -1,12 +1,12 @@
-import React, {useState} from 'react'; 
+import React, { useState } from 'react';
 import styles from './ToDo.module.css'
 
-const ToDo = props =>{
+const ToDo = props => {
 
     const [isOpen, setIsOpen] = useState(props.isCompleted);
 
-    const changeHandler = () =>{
-        if(isOpen === false){
+    const changeHandler = () => {
+        if (isOpen === false) {
             setIsOpen(true);
             localStorage.setItem(props.id, JSON.stringify({
                 task: props.task,
@@ -14,7 +14,7 @@ const ToDo = props =>{
                 isCompleted: true
             }))
 
-        }else{
+        } else {
             setIsOpen(false);
             localStorage.setItem(props.id, JSON.stringify({
                 task: props.task,
@@ -24,21 +24,24 @@ const ToDo = props =>{
         }
     }
 
-    const deleterHandler = () =>{
+    const deleterHandler = () => {
         props.onDelete(props.id);
     }
 
 
-    return(
+    return (
         <div className={styles.item}>
-            {isOpen ? 
-                <input checked type="checkbox" onChange={changeHandler} className={styles.checkbox}/>
-            : 
-                <input type="checkbox" onChange={changeHandler} className={styles.checkbox}/>
-            }
-            
-            <h3 className={isOpen ? styles.task_not_open : styles.task_open}>{props.task}</h3>
-            <button className = {styles.delete} onClick={deleterHandler}>Delete</button>
+            <div className={styles.task_container}>
+                {isOpen ?
+                    <input checked type="checkbox" onChange={changeHandler} className={styles.checkbox} />
+                    :
+                    <input type="checkbox" onChange={changeHandler} className={styles.checkbox} />
+                }
+
+                <h3 className={isOpen ? styles.task_not_open : styles.task_open}>{props.task}</h3>
+            </div>
+
+            <button className={styles.delete} onClick={deleterHandler}>Delete</button>
         </div>
     );
 }
